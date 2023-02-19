@@ -4,7 +4,9 @@
   "description": "tic-tac-toe game by Alexandr V.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode=production",
+    "watch": "webpack --watch --mode=development",
+    "start": "webpack serve --mode=development --open"
   },
   "author": "Alexandr V.",
   "license": "ISC",
