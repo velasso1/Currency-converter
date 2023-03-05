@@ -52,5 +52,6 @@ export const conversion = () => {
 
     convertible.addEventListener('input', convert);
 
+    convert();
     refreshDate();
 };
