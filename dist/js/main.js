@@ -16,17 +16,47 @@
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/module */ \"./modules/module.js\");\n\r\n\r\n\r\n\r\n(0,_modules_module__WEBPACK_IMPORTED_MODULE_0__.module)();\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_validation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/validation */ \"./modules/validation.js\");\n/* harmony import */ var _modules_reverseCurrency__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/reverseCurrency */ \"./modules/reverseCurrency.js\");\n/* harmony import */ var _modules_conversion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/conversion */ \"./modules/conversion.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n(0,_modules_validation__WEBPACK_IMPORTED_MODULE_0__.validation)();\r\n(0,_modules_reverseCurrency__WEBPACK_IMPORTED_MODULE_1__.reverseCur)();\r\n(0,_modules_conversion__WEBPACK_IMPORTED_MODULE_2__.conversion)();\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
-/***/ "./modules/module.js":
-/*!***************************!*\
-  !*** ./modules/module.js ***!
-  \***************************/
+/***/ "./modules/conversion.js":
+/*!*******************************!*\
+  !*** ./modules/conversion.js ***!
+  \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"module\": () => (/* binding */ module)\n/* harmony export */ });\n\r\n\r\nconst module = () => {\r\n    \r\n}\n\n//# sourceURL=webpack:///./modules/module.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"conversion\": () => (/* binding */ conversion)\n/* harmony export */ });\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers */ \"./modules/helpers.js\");\n\r\n\r\n\r\n\r\nconst conversion = () => {\r\n\r\n    const converterAria = document.querySelector('.converter-aria');\r\n\r\n    // let btn = document.querySelector('.convert-btn');\r\n    let convertible = document.querySelector('.currency-value');\r\n    let result = document.querySelector('.currency-value-output');\r\n    let selectInput = document.querySelector('.currency');\r\n    let selectOutput = document.querySelector('.currency-output');\r\n    let changeBtn = document.querySelector('.converter-icon');\r\n    let actualDate = document.querySelector('.actually');\r\n\r\n    // const refreshDate = () => {\r\n        \r\n    // }\r\n\r\n    const convert = async (e) => {\r\n        let inputIndex = selectInput.selectedIndex;\r\n        let outputIndex = selectOutput.selectedIndex;\r\n\r\n        if (inputIndex === outputIndex) {\r\n            result.value = convertible.value;\r\n            return;\r\n        }\r\n\r\n        if (outputIndex === 0) {\r\n            result.value = convertible.value * (await (0,_helpers__WEBPACK_IMPORTED_MODULE_0__.getValue)(`${selectInput[inputIndex].getAttribute('value')}`));\r\n            return;\r\n        }\r\n\r\n        if (inputIndex === 0) {\r\n            result.value = convertible.value / await (0,_helpers__WEBPACK_IMPORTED_MODULE_0__.getValue)(`${selectOutput[outputIndex].getAttribute('value')}`);\r\n            return;\r\n        }\r\n\r\n        if (outputIndex > 0) {\r\n            result.value = \r\n            (convertible.value * await (0,_helpers__WEBPACK_IMPORTED_MODULE_0__.getValue)(`${selectInput[inputIndex].getAttribute('value')}`)) / \r\n            await (0,_helpers__WEBPACK_IMPORTED_MODULE_0__.getValue)(`${selectOutput[outputIndex].getAttribute('value')}`);\r\n            return;\r\n        }\r\n    }\r\n    \r\n    converterAria.addEventListener('click', (e) => {\r\n        if (e.target === changeBtn || \r\n            e.target === selectInput || \r\n            e.target === selectOutput) {\r\n            convert();\r\n        }\r\n    })\r\n\r\n    changeBtn.addEventListener('click', convert);\r\n    convertible.addEventListener('input', convert);\r\n\r\n\r\n    (0,_helpers__WEBPACK_IMPORTED_MODULE_0__.getCheckDate)();\r\n};\n\n//# sourceURL=webpack:///./modules/conversion.js?");
+
+/***/ }),
+
+/***/ "./modules/helpers.js":
+/*!****************************!*\
+  !*** ./modules/helpers.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getCheckDate\": () => (/* binding */ getCheckDate),\n/* harmony export */   \"getValue\": () => (/* binding */ getValue)\n/* harmony export */ });\n\r\n\r\nconst getValue = async (valute) => {\r\n    let valutes = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');\r\n    let courseUSD = await valutes.json();\r\n\r\n    return courseUSD.Valute[valute].Value;\r\n}\r\n\r\nconst getCheckDate = async () => {\r\n    let dating = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');\r\n    let date = await dating.json();\r\n\r\n    return date.Timestamp;\r\n}\n\n//# sourceURL=webpack:///./modules/helpers.js?");
+
+/***/ }),
+
+/***/ "./modules/reverseCurrency.js":
+/*!************************************!*\
+  !*** ./modules/reverseCurrency.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"reverseCur\": () => (/* binding */ reverseCur)\n/* harmony export */ });\n\r\n\r\nconst reverseCur = () => {\r\n    const reverseBtn = document.querySelector('.converter-icon');\r\n    const selectIn = document.querySelector('.currency');\r\n    const selectOutput = document.querySelector('.currency-output');\r\n\r\n    reverseBtn.addEventListener('click', (e) => {\r\n        e.preventDefault();\r\n\r\n        let cache = selectIn.selectedIndex;\r\n        selectIn.selectedIndex = selectOutput.selectedIndex;\r\n        selectOutput.selectedIndex = cache;\r\n    })\r\n}\n\n//# sourceURL=webpack:///./modules/reverseCurrency.js?");
+
+/***/ }),
+
+/***/ "./modules/validation.js":
+/*!*******************************!*\
+  !*** ./modules/validation.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"validation\": () => (/* binding */ validation)\n/* harmony export */ });\n\r\n\r\nconst validation = () => {\r\n    \r\n    const inputFrom = document.querySelector('.currency-value');\r\n\r\n    inputFrom.addEventListener('input', (e) => {\r\n        e.target.value = e.target.value.replace(/\\D/gi, '');\r\n    })\r\n}\n\n//# sourceURL=webpack:///./modules/validation.js?");
 
 /***/ })
 

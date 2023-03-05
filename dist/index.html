@@ -4,9 +4,62 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="Image/x-icon" href="img/favicon.png" rel="icon" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
     <script src="./js/main.js" defer></script>
-    <title>Tic-Tac-Toe</title>
+    <title>Converter</title>
   </head>
-  <body></body>
+  <body>
+    <div class="section converter">
+      <div class="converter-aria">
+        <h1 class="coverter-title title-line">Currency converter</h1>
+        <h2 class="actually">The exchange rate is valid for</h2>
+        <div class="converter-output">
+          <p class="converter-clue">
+            Choose from which and to which currency to convert
+          </p>
+        </div>
+        <div class="currency-from">
+          <input class="currency-value" type="text" placeholder="Enter value" />
+          <span>|</span>
+          <select class="currency" name="" id="">
+            <option value="1">RUB</option>
+            <option value="EUR">EUR</option>
+            <option value="USD" selected>USD</option>
+          </select>
+        </div>
+        <div class="currency-in">
+          <input
+            class="currency-value-output"
+            type="text"
+            disabled
+            placeholder="0.00"
+          />
+          <span>|</span>
+          <select class="currency-output" name="" id="">
+            <option value="1" selected>RUB</option>
+            <option value="EUR">EUR</option>
+            <option value="USD">USD</option>
+          </select>
+
+          <a href="" class="converter-btn">
+            <img
+              class="converter-icon"
+              src="img/reverse-arrows.png"
+              alt="reverse-currency"
+            />
+          </a>
+        </div>
+        <!-- <div class="converter-button">
+          <button class="convert-btn">Convert</button>
+        </div> -->
+      </div>
+    </div>
+  </body>
 </html>

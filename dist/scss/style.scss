@@ -1,5 +1,99 @@
-.box {
-    width: 500px;
-    height: 500px;
-    background-color: red;
+body {
+    font-family: 'Montserrat';
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,108,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 50px 0;
+}
+
+.currency-from,
+.currency-in {
+    display: flex;
+    justify-content: space-between;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+.converter-output {
+    width: 280px;
+}
+
+.converter-clue {
+    margin-bottom: 10px;
+}
+
+.converter-aria {
+    position: relative;
+}
+
+.converter-icon {
+    position: absolute;
+    top: 76%;
+    left: 100%;
+    width: 20px;
+}
+
+.currency-value,
+.currency-value-output {
+    width: 100%;
+    caret-color: rgb(233, 57, 8);
+    color: black;
+} 
+
+.currency-value-output::placeholder,
+.currency-value::placeholder {
+    color: black;
+}
+
+.currency-value-output,
+.currency-value,
+.currency,
+.currency-output,
+.currency-value:focus {
+    border: none;
+    outline: none;
+    background-color: inherit;
+}
+
+.convert-btn {
+    background-color: inherit;
+    padding: 10px 60px;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: all 0.2s ease-out;
+    width: 100%;
+}
+
+.convert-btn:hover {
+    background-color: rgba(28, 226, 147, 0.204);
+    cursor: pointer;
+    color: #d2d2d2;
+}
+
+.currency:hover,
+.currency-output:hover {
+    cursor: pointer;
+}
+
+.title-line {
+    border-bottom: 1px solid rgb(233, 57, 8);;
+}
+
+.converter-note {
+    font-size: 11px;
+    color: #494949;
+}
+
+.actually {
+    margin-bottom: 15px;
 }

@@ -1,5 +1,9 @@
 'use strict';
 
-import {module} from './modules/module'
+import { validation } from './modules/validation'
+import { reverseCur } from './modules/reverseCurrency'
+import { conversion } from './modules/conversion'
 
-module();
+validation();
+reverseCur();
+conversion();
