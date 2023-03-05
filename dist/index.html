@@ -19,7 +19,9 @@
     <div class="section converter">
       <div class="converter-aria">
         <h1 class="coverter-title title-line">Currency converter</h1>
-        <h2 class="actually">The exchange rate is valid for</h2>
+        <h2 class="actually">
+          The exchange rate is valid for <span class="actual_date"></span>
+        </h2>
         <div class="converter-output">
           <p class="converter-clue">
             Choose from which and to which currency to convert
@@ -29,7 +31,7 @@
           <input class="currency-value" type="text" placeholder="Enter value" />
           <span>|</span>
           <select class="currency" name="" id="">
-            <option value="1">RUB</option>
+            <option value="RUB">RUB</option>
             <option value="EUR">EUR</option>
             <option value="USD" selected>USD</option>
           </select>
@@ -43,7 +45,7 @@
           />
           <span>|</span>
           <select class="currency-output" name="" id="">
-            <option value="1" selected>RUB</option>
+            <option value="RUB">RUB</option>
             <option value="EUR">EUR</option>
             <option value="USD">USD</option>
           </select>
@@ -56,9 +58,6 @@
             />
           </a>
         </div>
-        <!-- <div class="converter-button">
-          <button class="convert-btn">Convert</button>
-        </div> -->
       </div>
     </div>
   </body>

@@ -4,12 +4,20 @@ export const getValue = async (valute) => {
     let valutes = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
     let courseUSD = await valutes.json();
 
+    if (valute === 'RUB') {
+       return 1;
+    }
+
     return courseUSD.Valute[valute].Value;
 }
 
-export const getCheckDate = async () => {
+export const checkDate = async () => {
     let dating = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
     let date = await dating.json();
 
-    return date.Timestamp;
+    let year = date.Timestamp.substr(0, 4);
+    let month = date.Timestamp.substr(5, 2);
+    let day = date.Timestamp.substr(8, 2);
+
+    return { year, month, day };
 }
