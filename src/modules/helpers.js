@@ -2,13 +2,13 @@
 
 export const getValue = async (valute) => {
     let valutes = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
-    let courseUSD = await valutes.json();
+    let course = await valutes.json();
 
     if (valute === 'RUB') {
        return 1;
     }
 
-    return courseUSD.Valute[valute].Value;
+    return course.Valute[valute].Value;
 }
 
 export const checkDate = async () => {
