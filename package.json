@@ -1,7 +1,7 @@
 {
-  "name": "tic-tac-toe",
+  "name": "currency-converter",
   "version": "1.0.0",
-  "description": "tic-tac-toe game by Alexandr V.",
+  "description": "currency converter(pet-project)",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode=production",
