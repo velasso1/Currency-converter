@@ -1,6 +1,6 @@
 'use strict';
 
-import { getValue, checkDate} from './helpers';
+import { getValue, checkDate } from './helpers';
 
 export const conversion = () => {
 
